@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>eBookMarks</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="topbar">
+    <div class="brand">eBookMarks</div>
+    <div class="global-search">
+      <input id="globalSearchInput" type="text" placeholder="Глобальний пошук по книгах та тезах..." />
+      <button id="globalSearchBtn">Пошук</button>
+    </div>
+    <div class="theme-toggle">
+      <label class="switch">
+        <input id="themeToggle" type="checkbox" />
+        <span class="slider"></span>
+      </label>
+      <span id="themeLabel">Light</span>
+    </div>
+  </header>
+
+  <main class="layout">
+    <aside class="sidebar-left">
+      <h3>Книги (A–Z)</h3>
+      <ul id="bookList"></ul>
+      <button id="addBookOpen">+ Додати книгу</button>
+    </aside>
+
+    <section class="content">
+      <section class="filters">
+        <h3>Фільтри за полями</h3>
+        <form id="filterForm">
+          <div class="grid">
+            <input name="title" placeholder="Назва" />
+            <input name="year" placeholder="Рік" type="number" />
+            <input name="author1" placeholder="Автор 1" />
+            <input name="author2" placeholder="Автор 2" />
+            <input name="author3" placeholder="Автор 3" />
+            <input name="author4" placeholder="Автор 4" />
+            <label>Початок читання <input name="start_date" type="date" /></label>
+            <label>Завершення <input name="end_date" type="date" /></label>
+          </div>
+          <div class="row">
+            <button type="submit">Застосувати</button>
+            <button type="button" id="resetFilters">Скинути</button>
+          </div>
+        </form>
+      </section>
+
+      <section>
+        <h3>Результати</h3>
+        <div id="results"></div>
+      </section>
+
+      <section class="bookmarks">
+        <h3>Додати електронну закладку</h3>
+        <form id="bookmarkForm">
+          <div class="row">
+            <select id="bmBookId"></select>
+            <input id="bmPage" type="number" min="1" placeholder="Номер сторінки" />
+            <input id="bmSummary" placeholder="Короткий зміст / тези" />
+            <button type="submit">Додати</button>
+          </div>
+        </form>
+        <div id="bookmarkList"></div>
+      </section>
+    </section>
+
+    <aside class="sidebar-right">
+      <h3>Результати глобального пошуку</h3>
+      <div id="globalResults"></div>
+    </aside>
+  </main>
+
+  <!-- Modal Book -->
+  <dialog id="bookModal">
+    <form method="dialog" id="bookForm">
+      <h3 id="bookModalTitle">Нова книга</h3>
+      <input name="id" type="hidden" />
+      <input name="title" placeholder="Назва *" required />
+      <input name="year" type="number" placeholder="Рік *" required />
+      <input name="author1" placeholder="Автор 1 *" required />
+      <input name="author2" placeholder="Автор 2" />
+      <input name="author3" placeholder="Автор 3" />
+      <input name="author4" placeholder="Автор 4" />
+      <label>Початок <input name="start_date" type="date" /></label>
+      <label>Кінець <input name="end_date" type="date" /></label>
+      <menu>
+        <button value="cancel">Відміна</button>
+        <button id="bookSaveBtn" value="default">Зберегти</button>
+      </menu>
+    </form>
+  </dialog>
+
+  <script src="app.js"></script>
+</body>
+</html>
