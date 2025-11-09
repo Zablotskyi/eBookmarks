@@ -1,0 +1,48 @@
+# Node.js dependencies
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Environment variables
+.env
+.env.local
+.env.*.local
+
+# Logs
+logs
+*.log
+log.txt
+debug.log
+
+# OS-specific files
+.DS_Store
+Thumbs.db
+
+# Build / Cache
+dist/
+build/
+.cache/
+
+# Frontend temporary files
+*.tmp
+*.swp
+
+# IDE/editor configs
+.vscode/
+.idea/
+*.iml
+
+# MySQL dumps or backups
+*.sql
+*.sql.gz
+
+# macOS Finder
+.Spotlight-V100
+.Trashes
+
+# Temporary uploads or exported files
+/uploads
+export/
+
+
